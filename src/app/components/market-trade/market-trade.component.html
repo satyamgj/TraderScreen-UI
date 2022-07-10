@@ -1,0 +1,488 @@
+<div class="market-trade">
+  <span class="deal-entry">
+    Bank Deal Entry
+  </span>
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="limit-tab" data-bs-toggle="tab" data-bs-target="#limit" type="button"
+        role="tab" aria-controls="limit" aria-selected="true">
+        Spot
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="market-tab" data-bs-toggle="tab" data-bs-target="#market" type="button" role="tab"
+        aria-controls="market" aria-selected="false">
+        Forward
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="stop-limit-tab" data-bs-toggle="tab" data-bs-target="#stop-limit" type="button"
+        role="tab" aria-controls="stop-limit" aria-selected="false">
+        Swap
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="stop-market-tab" data-bs-toggle="tab" data-bs-target="#stop-market" type="button"
+        role="tab" aria-controls="stop-market" aria-selected="false">
+        NDF
+      </button>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="limit" role="tabpanel" aria-labelledby="limit-tab">
+      <div class="d-flex justify-content-between">
+        <div class="market-trade-buy">
+          <form>
+            <div class="input-group">
+              <div class="input-group-append">
+                <span class="input-group-text">Entity</span>
+              </div>
+              <input type="text" class="form-control" placeholder="Entity" required />
+            </div>
+
+            <div class="input-group">
+              <div class="input-group-append">
+                <span class="input-group-text">Cust Name</span>
+              </div>
+              <input type="text" class="form-control" placeholder="Customer Name" required />
+            </div>
+
+            <div class="input-group">
+              <div class="input-group-append">
+                <span class="input-group-text">Trade Date</span>
+              </div>
+              <input type="text" class="form-control" placeholder="Trade Date" required />
+            </div>
+
+            <div class="input-group">
+              <div class="input-group-append">
+                <span class="input-group-text">CCY Pair</span>
+              </div>
+              <input type="text" class="form-control" placeholder="CCY Pair" required />
+            </div>
+
+            <div class="input-group">
+              <div class="input-group-append">
+                <span class="input-group-text">Bank Buy</span>
+              </div>
+              <input type="text" class="form-control" placeholder="Bank Buy" required />
+            </div>
+
+            <div class="input-group">
+              <div class="input-group-append">
+                <span class="input-group-text">Bank Sell</span>
+              </div>
+              <input type="text" class="form-control" placeholder="Bank Sell" required />
+            </div>
+            <!-- <div class="input-group">
+              <span class="spot-rate">Spot Rate</span>
+              <input type="text" class="form-control" placeholder="Cover" required />
+            </div> -->
+
+            <hr>
+
+            <div class="row">
+              <div class="col-md-6">
+                <span class="spot-rate">Spot Rate</span>
+              </div>
+              <div class="col-md-6">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Cover" required />
+                </div>
+              </div>
+            </div>
+
+            <hr>
+
+            <div class="row">
+              <div class="col-md-6">
+                <span class="spot-rate">Swap Points</span>
+              </div>
+              <div class="col-md-6">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Cover" required />
+                </div>
+              </div>
+            </div>
+
+            <hr>
+
+            <div class="row">
+              <div class="col-md-6">
+                <span class="spot-rate">Outright</span>
+              </div>
+              <div class="col-md-6">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Cover" required />
+                </div>
+              </div>
+            </div>
+
+            <hr>
+
+            <!-- <button type="submit" class="btn buy">Quote</button> -->
+          </form>
+        </div>
+
+        <div class="market-trade-sell">
+          <form>
+
+            <div class="input-group">
+              <div class="input-group-append">
+                <span class="input-group-text">RM Name</span>
+              </div>
+              <input type="text" class="form-control" placeholder="RM Name" required />
+            </div>
+
+            <div class="input-group">
+              <div class="input-group-append">
+                <span class="input-group-text">Cust Segment</span>
+              </div>
+              <input type="number" class="form-control" placeholder="Customer Segment" required />
+            </div>
+
+            <div class="input-group">
+              <div class="input-group-append">
+                <span class="input-group-text">Value Date</span>
+              </div>
+              <input type="text" class="form-control" placeholder="Value Date" required />
+            </div>
+
+            <div class="input-group">
+              <div class="input-group-append">
+                <span class="input-group-text">Tenor</span>
+              </div>
+              <input type="text" class="form-control" placeholder="Tenor" required />
+            </div>
+
+            <div class="input-group">
+              <div class="input-group-append">
+                <span class="input-group-text">Buy Amount</span>
+              </div>
+              <input type="text" class="form-control" placeholder="Buy Amount" required />
+            </div>
+
+            <div class="input-group">
+              <div class="input-group-append">
+                <span class="input-group-text">Sell Amount</span>
+              </div>
+              <input type="text" class="form-control" placeholder="Sell Amount" required />
+            </div>
+
+            <hr>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Spreads" required />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Client " required />
+                </div>
+              </div>
+            </div>
+
+            <hr>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Spreads" required />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Client " required />
+                </div>
+              </div>
+            </div>
+
+            <hr>
+            
+            <div class="row">
+              <div class="col-md-6">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Spreads" required />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Client " required />
+                </div>
+              </div>
+            </div>
+
+            <hr>
+            
+
+            <!-- <button type="submit" class="btn sell">Sell</button> -->
+          </form>
+        </div>
+        </div>
+        <div class="row">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Remarks " required />
+          </div>
+        </div>
+        <button type="submit" class="btn buy">Quote</button>
+        <!-- <div class="row">
+          <div class="col-md-4 extra">
+            <div class="row">
+                <div class="col-md-4">
+                  <span class="spot-rate">Spot Rate</span>
+                </div>
+                <div class="col-md-8">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Cover" required />
+                  </div>
+                </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="row">
+              <div class="col-md-3">
+              </div>
+              <div class="col-md-9">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Spreads" required />
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="col-md-3">
+          </div>
+          <div class="col-md-9">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Client" required />
+            </div>
+          </div>
+      </div>
+      </div> -->
+    </div>
+    <div class="tab-pane fade" id="market" role="tabpanel" aria-labelledby="market-tab">
+      <div class="d-flex justify-content-between">
+        <div class="market-trade-buy">
+          <form>
+            <div class="input-group">
+              <div class="input-group-append">
+                <span class="input-group-text">Bank Buy</span>
+              </div>
+              <input type="number" class="form-control" placeholder="Price" required />
+            </div>
+            <div class="input-group">
+              <input type="number" class="form-control" placeholder="Amount" required />
+              <div class="input-group-append">
+                <span class="input-group-text"></span>
+              </div>
+            </div>
+            <ul class="market-trade-list">
+              <li>
+                <a href="#">25%</a>
+              </li>
+              <li>
+                <a href="#">50%</a>
+              </li>
+              <li>
+                <a href="#">75%</a>
+              </li>
+              <li>
+                <a href="#">100%</a>
+              </li>
+            </ul>
+            <p>Available: <span>0 BTC = 0 USD</span></p>
+            <p>Volume: <span>0 BTC = 0 USD</span></p>
+            <p>Margin: <span>0 BTC = 0 USD</span></p>
+            <p>Fee: <span>0 BTC = 0 USD</span></p>
+            <button type="submit" class="btn buy">Buy</button>
+          </form>
+        </div>
+        <div class="market-trade-sell">
+          <form>
+            <div class="input-group">
+              <input type="number" class="form-control" placeholder="Price" required />
+              <div class="input-group-append">
+                <span class="input-group-text">BTC</span>
+              </div>
+            </div>
+            <div class="input-group">
+              <input type="number" class="form-control" placeholder="Amount" required />
+              <div class="input-group-append">
+                <span class="input-group-text">ETH</span>
+              </div>
+            </div>
+            <ul class="market-trade-list">
+              <li>
+                <a href="#">25%</a>
+              </li>
+              <li>
+                <a href="#">50%</a>
+              </li>
+              <li>
+                <a href="#">75%</a>
+              </li>
+              <li>
+                <a href="#">100%</a>
+              </li>
+            </ul>
+            <p>Available: <span>0 BTC = 0 USD</span></p>
+            <p>Volume: <span>0 BTC = 0 USD</span></p>
+            <p>Margin: <span>0 BTC = 0 USD</span></p>
+            <p>Fee: <span>0 BTC = 0 USD</span></p>
+            <button class="btn sell">Sell</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="stop-limit" role="tabpanel" aria-labelledby="stop-limit-tab">
+      <div class="d-flex justify-content-between">
+        <div class="market-trade-buy">
+          <form>
+            <div class="input-group">
+              <input type="number" class="form-control" placeholder="Price" required />
+              <div class="input-group-append">
+                <span class="input-group-text">BTC</span>
+              </div>
+            </div>
+            <div class="input-group">
+              <input type="number" class="form-control" placeholder="Amount" required />
+              <div class="input-group-append">
+                <span class="input-group-text">ETH</span>
+              </div>
+            </div>
+            <ul class="market-trade-list">
+              <li>
+                <a href="#">25%</a>
+              </li>
+              <li>
+                <a href="#">50%</a>
+              </li>
+              <li>
+                <a href="#">75%</a>
+              </li>
+              <li>
+                <a href="#">100%</a>
+              </li>
+            </ul>
+            <p>Available: <span>0 BTC = 0 USD</span></p>
+            <p>Volume: <span>0 BTC = 0 USD</span></p>
+            <p>Margin: <span>0 BTC = 0 USD</span></p>
+            <p>Fee: <span>0 BTC = 0 USD</span></p>
+            <button type="submit" class="btn buy">Buy</button>
+          </form>
+        </div>
+        <div class="market-trade-sell">
+          <form>
+            <div class="input-group">
+              <input type="number" class="form-control" placeholder="Price" required />
+              <div class="input-group-append">
+                <span class="input-group-text">BTC</span>
+              </div>
+            </div>
+            <div class="input-group">
+              <input type="number" class="form-control" placeholder="Amount" required />
+              <div class="input-group-append">
+                <span class="input-group-text">ETH</span>
+              </div>
+            </div>
+            <ul class="market-trade-list">
+              <li>
+                <a href="#">25%</a>
+              </li>
+              <li>
+                <a href="#">50%</a>
+              </li>
+              <li>
+                <a href="#">75%</a>
+              </li>
+              <li>
+                <a href="#">100%</a>
+              </li>
+            </ul>
+            <p>Available: <span>0 BTC = 0 USD</span></p>
+            <p>Volume: <span>0 BTC = 0 USD</span></p>
+            <p>Margin: <span>0 BTC = 0 USD</span></p>
+            <p>Fee: <span>0 BTC = 0 USD</span></p>
+            <button class="btn sell">Sell</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="stop-market" role="tabpanel" aria-labelledby="stop-market-tab">
+      <div class="d-flex justify-content-between">
+        <div class="market-trade-buy">
+          <form>
+            <div class="input-group">
+              <input type="number" class="form-control" placeholder="Price" required />
+              <div class="input-group-append">
+                <span class="input-group-text">BTC</span>
+              </div>
+            </div>
+            <div class="input-group">
+              <input type="number" class="form-control" placeholder="Amount" required />
+              <div class="input-group-append">
+                <span class="input-group-text">ETH</span>
+              </div>
+            </div>
+            <ul class="market-trade-list">
+              <li>
+                <a href="#">25%</a>
+              </li>
+              <li>
+                <a href="#">50%</a>
+              </li>
+              <li>
+                <a href="#">75%</a>
+              </li>
+              <li>
+                <a href="#">100%</a>
+              </li>
+            </ul>
+            <p>Available: <span>0 BTC = 0 USD</span></p>
+            <p>Volume: <span>0 BTC = 0 USD</span></p>
+            <p>Margin: <span>0 BTC = 0 USD</span></p>
+            <p>Fee: <span>0 BTC = 0 USD</span></p>
+            <button type="submit" class="btn buy">Buy</button>
+          </form>
+        </div>
+        <div class="market-trade-sell">
+          <form>
+            <div class="input-group">
+              <input type="number" class="form-control" placeholder="Price" required />
+              <div class="input-group-append">
+                <span class="input-group-text">BTC</span>
+              </div>
+            </div>
+            <div class="input-group">
+              <input type="number" class="form-control" placeholder="Amount" required />
+              <div class="input-group-append">
+                <span class="input-group-text">ETH</span>
+              </div>
+            </div>
+            <ul class="market-trade-list">
+              <li>
+                <a href="#">25%</a>
+              </li>
+              <li>
+                <a href="#">50%</a>
+              </li>
+              <li>
+                <a href="#">75%</a>
+              </li>
+              <li>
+                <a href="#">100%</a>
+              </li>
+            </ul>
+            <p>Available: <span>0 BTC = 0 USD</span></p>
+            <p>Volume: <span>0 BTC = 0 USD</span></p>
+            <p>Margin: <span>0 BTC = 0 USD</span></p>
+            <p>Fee: <span>0 BTC = 0 USD</span></p>
+            <button class="btn sell">Sell</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
