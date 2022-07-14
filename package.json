@@ -18,10 +18,13 @@
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
+    "@ng-bootstrap/ng-bootstrap": "^12.1.2",
     "@popperjs/core": "^2.9.3",
     "angular-dark-mode": "^3.0.1",
     "angular-responsive-carousel": "^2.1.2",
+    "angularx-qrcode": "^14.0.0",
     "bootstrap": "^5.1.0",
+    "ngx-toastr": "^15.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

@@ -16,7 +16,12 @@ import { TermsAndConditionsComponent } from './pages/terms-and-conditions/terms-
 import { WalletComponent } from './pages/wallet/wallet.component';
 
 const routes: Routes = [
-  { path: '', component: ExchangeComponent },
+  {
+    path: '',
+    redirectTo: '/login',
+    pathMatch: 'full',
+  },
+  { path: 'exchange', component: ExchangeComponent },
   { path: 'lock', component: LockComponent },
   { path: 'login', component: LoginComponent },
   { path: 'markets', component: MarketsComponent },

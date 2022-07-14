@@ -97,6 +97,7 @@
   float: right;
 }
 
+
 .market-trade-list {
   margin-bottom: 23px;
 }
@@ -115,5 +116,6 @@
 
 .market-trade-sell {
   padding: 0 0 0 15px;
-  border-left: 1px solid #e0e3eb;
+ // border-left: 1px solid #e0e3eb;
+ border-left: none;
 }

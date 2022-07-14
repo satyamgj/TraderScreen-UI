@@ -3,13 +3,14 @@
     <form>
       <span>Sign In</span>
       <div class="form-group">
-        <input type="email" class="form-control" placeholder="Email Address" required />
+        <input [(ngModel)]="email" name="email" type="email" class="form-control" placeholder="Email Address" required />
       </div>
-      <div class="form-group">
-        <input type="password" class="form-control" placeholder="Password" required />
+      <div  class="form-group">
+        <input [(ngModel)]="verificationCode" name="code" type="text" class="form-control" placeholder="Verification Code" required />
       </div>
       <div class="text-end">
-        <a routerLink="/reset">Forgot Password?</a>
+        <!-- <a routerLink="/reset">Forgot Password?</a> -->
+        <a (click)="sendCode()"><u>send code</u></a>
       </div>
       <div class="custom-control form-check">
         <input type="checkbox" class="form-check-input" id="form-checkbox" />
@@ -17,7 +18,7 @@
           Remember me
         </label>
       </div>
-      <button type="submit" class="btn btn-primary">Sign In</button>
+      <button (click)="signIn()" type="submit" class="btn btn-primary">Sign In</button>
     </form>
     <h2>
       Don't have an account?
@@ -25,3 +26,13 @@
     </h2>
   </div>
 </div>
+
+<ng-template #showQRCode let-modal >
+ <div class="QRCode"></div> 
+ <div class="modal-header">
+  <h4 class="modal-title">QR Code</h4>
+ </div>
+ <div class="modal-body">
+  <img title="QR Code" [src]="QRCode" class="center"/>
+ </div>
+</ng-template>

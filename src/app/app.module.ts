@@ -28,6 +28,13 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { TermsAndConditionsComponent } from './pages/terms-and-conditions/terms-and-conditions.component';
 import { WalletComponent } from './pages/wallet/wallet.component';
 import { TradingDarkChartComponent } from './components/trading-dark-chart/trading-dark-chart.component';
+
+import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RouterModule } from '@angular/router';
+// import { ToastrModule } from 'ngx-toastr';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,8 +63,22 @@ import { TradingDarkChartComponent } from './components/trading-dark-chart/tradi
     TermsAndConditionsComponent,
     WalletComponent,
     TradingDarkChartComponent,
+
   ],
-  imports: [BrowserModule, AppRoutingModule, IvyCarouselModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule, 
+    IvyCarouselModule,
+    FormsModule,
+    HttpClientModule,
+    NgbModule,
+    RouterModule
+    // ToastrModule.forRoot({
+    //   timeOut: 1000,
+    // positionClass: 'toast-bottom-center',
+    // preventDuplicates: true,
+    // }), NgbModule, 
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
