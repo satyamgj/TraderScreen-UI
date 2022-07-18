@@ -107,6 +107,13 @@
   .markets-capital-item {
     height: 304px;
   }
+
+.sm-gutters > .col,
+.sm-gutters > [class*="col-"] {
+  padding-right: 7.5px;
+  padding-left: 7.5px;
+  height: 550px;
+}
 }
 @media only screen and (max-width: 576px) {
   .markets-capital-item {

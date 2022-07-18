@@ -8,20 +8,21 @@ const http = require('http')
 const api_call = require("./api_helper.js")
 
 //API URL TO SEND REQUEST
-const transaction_request = "192.168.1.73:1026/transaction/publishRequest"
+const static_data_request = 'http://192.168.1.73:1028/loadStaticData'
 
 //Adding Middlewares
 app.use(express.json());
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
-app.listen(8000, () => {
-  console.log(` Producer API Server is up and running on 8000 ...`);
+app.listen(3001, () => {
+  console.log(` Static Data fetch API Server is up and running on 3001 ...`);
 });
 
-app.post('/sendQuote',(req,res)=>{
-	 console.log(req.body);	
-	 api_call.make_API_call('http://localhost:1026/transaction/publishRequest','POST',req)
+app.get('/fetchStaticData',(req,res)=>{
+	 //console.log(req.body);	
+	 console.log("Hitting to fetch static data ->" + static_data_request)
+	 api_call.make_API_call(static_data_request,'GET',req)
     .then(response => {
         res.json(response)
     })
@@ -29,3 +30,4 @@ app.post('/sendQuote',(req,res)=>{
         res.send(error)
     })
 })
+

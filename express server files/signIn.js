@@ -8,7 +8,7 @@ const http = require('http')
 const api_call = require("./api_helper.js")
 
 //API URL TO SEND REQUEST
-const transaction_request = 'http://192.168.1.69:8080/'
+const transaction_request = 'http://192.168.1.73:8080/'
 
 //Adding Middlewares
 app.use(express.json());

@@ -84,14 +84,14 @@
         <thead>
           <tr>
             <th>Pairs</th>
-            <th>Last Price</th>
+            <th>BID/ASK</th>
             <th>Change</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td><i class="icon ion-md-star"></i> ETH/BTC</td>
-            <td>0.00020255</td>
+          <tr *ngFor="let currencyPair of CurrencyPair">
+            <td><i class="icon ion-md-star"></i> {{currencyPair.baseCurrency.isoCode}}/{{currencyPair.quoteCurrency.isoCode}}</td>
+            <td>{{currencyPair.bidRate}}/{{currencyPair.askRate}}</td>
             <td class="red">-2.58%</td>
           </tr>
         </tbody>

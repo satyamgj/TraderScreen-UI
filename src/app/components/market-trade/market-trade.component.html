@@ -37,7 +37,11 @@
               <div class="input-group-append">
                 <span class="input-group-text">Entity</span>
               </div>
-              <input type="text" class="form-control" placeholder="Entity" required />
+              <!-- <input type="text" class="form-control" placeholder="Entity" required /> -->
+              <select [(ngModel)]="entity" name="entity" title="entity" class="form-select">
+                <option id="placeholder" value="0" disabled selected>Select your entity</option>
+                <option *ngFor="let entity of entityList" [value]="entity.id">{{entity.entityName}}</option>
+              </select>
             </div>
 
             <div class="input-group">
@@ -51,7 +55,7 @@
               <div class="input-group-append">
                 <span class="input-group-text">Trade Date</span>
               </div>
-              <input type="text" class="form-control" placeholder="Trade Date" required />
+              <input type="date" class="form-control" placeholder="Trade Date" required />
             </div>
 
             <div class="input-group">
@@ -138,21 +142,29 @@
               <div class="input-group-append">
                 <span class="input-group-text">Cust Segment</span>
               </div>
-              <input type="number" class="form-control" placeholder="Customer Segment" required />
+              <select [(ngModel)]="customerSegment" name="customerSegment" title="customer Segment" class="form-select">
+                <option id="placeholder" value="0" disabled selected>Select Customer Segment</option>
+                <option *ngFor="let customerSegment of customerSegmentType" [value]="customerSegment.id">{{customerSegment.segmentName}}</option>
+              </select>
+              <!-- <input type="number" class="form-control" placeholder="Customer Segment" required /> -->
             </div>
 
             <div class="input-group">
               <div class="input-group-append">
                 <span class="input-group-text">Value Date</span>
               </div>
-              <input type="text" class="form-control" placeholder="Value Date" required />
+              <input type="date" class="form-control" placeholder="Value Date" required />
             </div>
 
             <div class="input-group">
               <div class="input-group-append">
                 <span class="input-group-text">Tenor</span>
               </div>
-              <input type="text" class="form-control" placeholder="Tenor" required />
+              <select [(ngModel)]="tenor" name="tenor" title="Tenor" class="form-select">
+                <option id="placeholder" value="0" disabled selected>Select Tenor</option>
+                <option *ngFor="let tenor of tenorList" [value]="tenor.id">{{tenor.tenorUnit}}</option>
+              </select>
+              <!-- <input type="text" class="form-control" placeholder="Tenor" required /> -->
             </div>
 
             <div class="input-group">

@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
     console.log("Signin in.. Please Wait");
     this.dataService.signIn(this.email,this.verificationCode).subscribe((result:any)=>{
       console.log(result)
-      if(result.valid){
+      if(result){
         console.log("SignIn successfull!");
         this.router.navigate(['exchange'])
       }

@@ -2,30 +2,55 @@
   <div class="form-access my-auto">
     <form>
       <span>Create Account</span>
-      <div class="form-group">
+      <!-- <div class="form-group">
         <input type="text" class="form-control" placeholder="Full Name" required />
+      </div> -->
+      <div class="form-group">
+        <input [(ngModel)]="email" name="email" type="email" class="form-control" placeholder="Email Address" required />
       </div>
       <div class="form-group">
-        <input type="email" class="form-control" placeholder="Email Address" required />
+        <!-- <input type="" required/> -->
+        <!-- <label class="role" for="selectRoles"></label> -->
+        <select [(ngModel)]="userRole" name="User Role" title="role" name="role" class="form-select">
+          <option style="color: #69727a ;" id="placeholder" value="0" disabled selected>Select your role</option>
+          <option *ngFor="let role of roles" [value]="role.id">{{role.roleName}}</option>
+        </select>
       </div>
       <div class="form-group">
+        <input [(ngModel)]="verificationCode" name="verificationCode" type="number" class="form-control" placeholder="Verification Code" required />
+      </div>
+      <div class="text-end">
+        <!-- <a routerLink="/reset">Forgot Password?</a> -->
+        <a (click)="sendCode()"><u>Generate QR code</u></a>
+      </div>
+      <!-- <div class="form-group">
         <input type="password" class="form-control" placeholder="Password" required />
       </div>
       <div class="form-group">
         <input type="password" class="form-control" placeholder="Confirm Password" required />
-      </div>
-      <div class="custom-control form-check">
+      </div> -->
+      <!-- <div class="custom-control form-check">
         <input type="checkbox" class="form-check-input" id="form-checkbox" required />
         <label class="form-check-label" for="form-checkbox">
           I agree to the
           <a routerLink="/terms-and-conditions">Terms & Conditions</a>
         </label>
-      </div>
-      <button type="submit" class="btn btn-primary">Create Account</button>
+      </div> -->
+      <button (click)="register()" type="submit" class="btn btn-primary">Create Account</button>
     </form>
     <h2>
       Already have an account?
-      <a routerLink="/login"> Sign in here</a>
+      <a routerLink="/login" > Sign in here</a>
     </h2>
   </div>
 </div>
+
+<ng-template #showQRCode let-modal >
+  <div class="QRCode"></div> 
+  <div class="modal-header">
+   <h4 class="modal-title">QR Code</h4>
+  </div>
+  <div class="modal-body">
+   <img title="QR Code" [src]="QRCode" class="center"/>
+  </div>
+ </ng-template>

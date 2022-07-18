@@ -1,3 +1,5 @@
+import { CurrencyPair } from './../../Interfaces/DataInterfaces';
+import { DataService } from './../../services/data.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MarketPairsComponent implements OnInit {
 
-  constructor() { }
+  CurrencyPair:CurrencyPair[]=[]
+
+  constructor(private dataService:DataService) { }
 
   ngOnInit(): void {
+    this.dataService.fetchStaticData().subscribe((data:any)=>{
+      console.log(data)
+      this.CurrencyPair = data.payload.CURRENCY_PAIR
+      console.log(this.CurrencyPair)
+    })
   }
 
 }

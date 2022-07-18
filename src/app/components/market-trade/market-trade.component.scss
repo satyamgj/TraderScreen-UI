@@ -11,7 +11,8 @@
     margin-right: 5px;
     width: 35%;
     overflow-y: auto;
-    background-color: #2a2e39;
+    // background-color: #2a2e39;
+    background-color: #1c2030;
 }
 
 .spot-rate{
@@ -27,3 +28,23 @@
 hr{
     background-color:#2a2e39;
 }
+
+ select{
+    color: white;
+    border: none;
+    font-size: 14px;
+    background-color:#2a2e39;
+}
+
+input{
+    font-size: 14px;
+    color: white;
+}
+
+option{
+    font-size: 14px;
+}
+
+// input{
+//     font-size: 14px;
+// }
