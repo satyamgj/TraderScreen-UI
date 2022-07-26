@@ -11,7 +11,7 @@
     <div class="collapse navbar-collapse" id="headerNav">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/">Exchange</a>
+          <a class="nav-link active" aria-current="page" routerLink="/exchange">Exchange</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="markets">Markets</a>
@@ -25,9 +25,9 @@
             <li>
               <a class="dropdown-item" routerLink="profile">Profile</a>
             </li>
-            <li>
+            <!-- <li>
               <a class="dropdown-item" routerLink="wallet">Wallet</a>
-            </li>
+            </li> -->
             <li>
               <a class="dropdown-item" routerLink="settings">Settings</a>
             </li>
@@ -64,7 +64,7 @@
         </li>
       </ul>
       <ul class="navbar-nav ml-auto">
-        <!-- <li class="nav-item header-custom-icon">
+        <li class="nav-item header-custom-icon">
           <input id="darkMode" type="checkbox" [checked]="darkMode$ | async" (change)="onToggle()"
             class="theme-toggle-input" />
           <a href="#" class="nav-link">
@@ -73,7 +73,7 @@
               <i class="icon ion-md-sunny lightMode"></i>
             </label>
           </a>
-        </li> -->
+        </li>
         <li class="nav-item dropdown header-custom-icon">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-bs-toggle="dropdown"
             aria-expanded="false">

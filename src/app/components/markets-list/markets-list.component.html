@@ -11,29 +11,29 @@
               </button>
             </li>
             <li class="nav-item" role="presentation">
-              <button class="nav-link active" id="btc-id" data-bs-toggle="tab" data-bs-target="#btc" type="button"
+              <button class="nav-link active" id="btc-id" data-bs-toggle="tab" data-bs-target="#usd" type="button"
                 role="tab" aria-controls="btc" aria-selected="false">
-                BTC
+                Order Requests
               </button>
             </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="kcs-id" data-bs-toggle="tab" data-bs-target="#kcs" type="button" role="tab"
+            <!-- <li class="nav-item" role="presentation">
+              <button class="nav-link" id="kcs-id" data-bs-toggle="tab" data-bs-target="#eur" type="button" role="tab"
                 aria-controls="kcs" aria-selected="false">
-                KCS
+                Order Negotiations
               </button>
-            </li>
+            </li> -->
             <li class="nav-item" role="presentation">
-              <button class="nav-link" id="usdt-id" data-bs-toggle="tab" data-bs-target="#usdt" type="button" role="tab"
+              <button class="nav-link" id="usdt-id" data-bs-toggle="tab" data-bs-target="#gbp" type="button" role="tab"
                 aria-controls="usdt" aria-selected="false">
-                USDT
+                Order Completed
               </button>
             </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="alts-id" data-bs-toggle="tab" data-bs-target="#alts" type="button" role="tab"
+            <!-- <li class="nav-item" role="presentation">
+              <button class="nav-link" id="alts-id" data-bs-toggle="tab" data-bs-target="#inr" type="button" role="tab"
                 aria-controls="alts" aria-selected="false">
-                ALTS
+                INR
               </button>
-            </li>
+            </li> -->
           </ul>
           <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade" id="favorites" role="tabpanel" aria-labelledby="favorites-id">
@@ -41,17 +41,20 @@
                 <table class="table star-active">
                   <thead>
                     <tr>
-                      <th>Pairs</th>
-                      <th>Coin</th>
-                      <th>Last Price</th>
-                      <th>Change (24H)</th>
-                      <th>High (24H)</th>
-                      <th>Low (24h)</th>
-                      <th>Volume (24h)</th>
+                      <th>Product</th>
+                      <th>Pair</th>
+                      <th>Spot Price</th>
+                      <th>Spread(pips)</th>
+                      <th>Direction</th>
+                      <th>Notional</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
+                    <tr *ngFor="let order of orders">
+
+                    </tr>
+                    <!-- <tr>
                       <td><i class="icon ion-md-star"></i> ETH/BTC</td>
                       <td><img src="../../../assets/img/icon/1.png" alt="eth" /> ETH</td>
                       <td>7394.06</td>
@@ -140,27 +143,27 @@
                       <td>7444.91</td>
                       <td>7267.06</td>
                       <td>431,687,258.77</td>
-                    </tr>
+                    </tr> -->
                   </tbody>
                 </table>
               </div>
             </div>
-            <div class="tab-pane fade show active" id="btc" role="tabpanel" aria-labelledby="btc-id">
+            <div class="tab-pane fade show active" id="usd" role="tabpanel" aria-labelledby="btc-id">
               <div class="table-responsive">
                 <table class="table">
                   <thead>
                     <tr>
-                      <th>Pairs</th>
-                      <th>Coin</th>
-                      <th>Last Price</th>
-                      <th>Change (24H)</th>
-                      <th>High (24H)</th>
-                      <th>Low (24h)</th>
-                      <th>Volume (24h)</th>
+                      <th>Product</th>
+                      <th>Pair</th>
+                      <th>Spot Price</th>
+                      <th>Spread(pips)</th>
+                      <th>Direction</th>
+                      <th>Notional</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
+                    <!-- <tr>
                       <td><i class="icon ion-md-star"></i> ETH/BTC</td>
                       <td><img src="../../../assets/img/icon/1.png" alt="eth" /> ETH</td>
                       <td>7394.06</td>
@@ -358,27 +361,27 @@
                       <td>7444.91</td>
                       <td>7267.06</td>
                       <td>431,687,258.25</td>
-                    </tr>
+                    </tr> -->
                   </tbody>
                 </table>
               </div>
             </div>
-            <div class="tab-pane fade" id="kcs" role="tabpanel" aria-labelledby="kcs-id">
+            <div class="tab-pane fade" id="eur" role="tabpanel" aria-labelledby="kcs-id">
               <div class="table-responsive">
                 <table class="table">
                   <thead>
                     <tr>
-                      <th>Pairs</th>
-                      <th>Coin</th>
-                      <th>Last Price</th>
-                      <th>Change (24H)</th>
-                      <th>High (24H)</th>
-                      <th>Low (24h)</th>
-                      <th>Volume (24h)</th>
+                      <th>Product</th>
+                      <th>Pair</th>
+                      <th>Spot Price</th>
+                      <th>Spread(pips)</th>
+                      <th>Direction</th>
+                      <th>Notional</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
+                    <!-- <tr>
                       <td><i class="icon ion-md-star"></i> ETH/KCS</td>
                       <td><img src="../../../assets/img/icon/1.png" alt="eth" /> ETH</td>
                       <td>7394.06</td>
@@ -585,27 +588,34 @@
                       <td>7444.91</td>
                       <td>7267.06</td>
                       <td>431,687,258.25</td>
-                    </tr>
+                    </tr> -->
                   </tbody>
                 </table>
               </div>
             </div>
-            <div class="tab-pane fade" id="usdt" role="tabpanel" aria-labelledby="usdt-id">
+            <div class="tab-pane fade" id="gbp" role="tabpanel" aria-labelledby="usdt-id">
               <div class="table-responsive">
                 <table class="table">
                   <thead>
                     <tr>
-                      <th>Pairs</th>
+                      <!-- <th>Pairs</th>
                       <th>Coin</th>
                       <th>Last Price</th>
                       <th>Change (24H)</th>
                       <th>High (24H)</th>
                       <th>Low (24h)</th>
-                      <th>Volume (24h)</th>
+                      <th>Volume (24h)</th> -->
+                      <th>Product</th>
+                      <th>Pair</th>
+                      <th>Spot Price</th>
+                      <th>Spread(pips)</th>
+                      <th>Direction</th>
+                      <th>Notional</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
+                    <!-- <tr>
                       <td><i class="icon ion-md-star"></i> ETH/USDT</td>
                       <td><img src="../../../assets/img/icon/1.png" alt="eth" /> ETH</td>
                       <td>7394.06</td>
@@ -812,27 +822,27 @@
                       <td>7444.91</td>
                       <td>7267.06</td>
                       <td>431,687,258.25</td>
-                    </tr>
+                    </tr> -->
                   </tbody>
                 </table>
               </div>
             </div>
-            <div class="tab-pane fade" id="alts" role="tabpanel" aria-labelledby="alts-id">
+            <div class="tab-pane fade" id="inr" role="tabpanel" aria-labelledby="alts-id">
               <div class="table-responsive">
                 <table class="table">
                   <thead>
                     <tr>
-                      <th>Pairs</th>
-                      <th>Coin</th>
-                      <th>Last Price</th>
-                      <th>Change (24H)</th>
-                      <th>High (24H)</th>
-                      <th>Low (24h)</th>
-                      <th>Volume (24h)</th>
+                      <th>Product</th>
+                      <th>Pair</th>
+                      <th>Spot Price</th>
+                      <th>Spread(pips)</th>
+                      <th>Direction</th>
+                      <th>Notional</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
+                    <!-- <tr>
                       <td><i class="icon ion-md-star"></i> ETH/ALTS</td>
                       <td><img src="../../../assets/img/icon/1.png" alt="eth" /> ETH</td>
                       <td>7394.06</td>
@@ -1039,7 +1049,7 @@
                       <td>7444.91</td>
                       <td>7267.06</td>
                       <td>431,687,258.25</td>
-                    </tr>
+                    </tr> -->
                   </tbody>
                 </table>
               </div>

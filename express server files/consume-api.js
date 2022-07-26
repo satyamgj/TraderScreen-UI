@@ -39,7 +39,7 @@ const clientId_ICICI = "consumer-group-ICICI"
 const clientId_SBI = "consumer-group-SBI"
 const clientId_KANJI = "consumer-group-KANJI"
 // we can define the list of brokers in the cluster
-const brokers = ["192.168.1.73:9092"]
+const brokers = ["192.168.1.7:9092"]
 
 const kafka = new Kafka({ clientId, brokers })
 const kafka_HDFC = new Kafka({ clientId_HDFC, brokers })

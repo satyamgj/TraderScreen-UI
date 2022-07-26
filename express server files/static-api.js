@@ -8,7 +8,7 @@ const http = require('http')
 const api_call = require("./api_helper.js")
 
 //API URL TO SEND REQUEST
-const static_data_request = 'http://192.168.1.73:1028/loadStaticData'
+const static_data_request = 'http://192.168.1.7:1028/loadStaticData'
 
 //Adding Middlewares
 app.use(express.json());
@@ -21,7 +21,7 @@ app.listen(3001, () => {
 
 app.get('/fetchStaticData',(req,res)=>{
 	 //console.log(req.body);	
-	 console.log("Hitting to fetch static data ->" + static_data_request)
+	 //console.log("Hitting to fetch static data ->" + static_data_request)
 	 api_call.make_API_call(static_data_request,'GET',req)
     .then(response => {
         res.json(response)

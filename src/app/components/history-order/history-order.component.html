@@ -18,12 +18,12 @@
         Order History
       </button>
     </li>
-    <li class="nav-item" role="presentation">
+    <!-- <li class="nav-item" role="presentation">
       <button class="nav-link" id="balance-tab" data-bs-toggle="tab" data-bs-target="#balance" type="button" role="tab"
         aria-controls="balance" aria-selected="false">
         Balance
       </button>
-    </li>
+    </li> -->
   </ul>
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="open-orders" role="tabpanel" aria-labelledby="open-orders-tab">
@@ -70,28 +70,6 @@
             <tr>
               <td>2:40 PM</td>
               <td>ETH/BTC</td>
-              <td class="green">BUY</td>
-              <td>$444</td>
-              <td>41</td>
-              <td>
-                <i class="icon ion-md-close-circle-outline red"></i>
-              </td>
-              <td>-</td>
-            </tr>
-            <tr>
-              <td>2:40 PM</td>
-              <td>ETH/BTC</td>
-              <td class="green">BUY</td>
-              <td>$444</td>
-              <td>41</td>
-              <td>
-                <i class="icon ion-md-checkmark-circle-outline green"></i>
-              </td>
-              <td>-</td>
-            </tr>
-            <tr>
-              <td>2:40 PM</td>
-              <td>ETH/BTC</td>
               <td class="red">SELL</td>
               <td>$444</td>
               <td>41</td>
@@ -120,7 +98,7 @@
           </thead>
           <tbody>
             <ng-container *ngFor="let data of data1">
-              <tr (click)="data.expanded = !data.expanded">
+              <tr class="main-row" (click)="data.expanded = !data.expanded">
                 <td> {{ data.expanded ? '&ndash;' : '+'}} 2:40 PM</td>
                 <td>ETH/BTC</td>
                 <td class="green">BUY</td>
@@ -131,7 +109,16 @@
                 </td>
                 <td>-</td>
               </tr>
-              <ng-container *ngIf="data.expanded">
+              <ng-container class="negotiation-container" *ngIf="data.expanded">
+                <tr class="negotiation">
+                  <th>Time</th>
+                  <th>All pairs</th>
+                  <th>Buy/Sell</th>
+                  <th>Price</th>
+                  <th>Amount</th>
+                  <th>Executed</th>
+                  <th>Unexecuted</th>
+                </tr>
                 <tr *ngFor="let details of findDetails(data)">
                   <td>2:40 PM</td>
                   <td>ETH/BTC</td>
@@ -141,7 +128,7 @@
                   <td>
                     <i class="icon ion-md-close-circle-outline red"></i>
                   </td>
-                  <td>-</td>
+                  <td>No</td>
                 </tr>
               </ng-container>
             </ng-container>

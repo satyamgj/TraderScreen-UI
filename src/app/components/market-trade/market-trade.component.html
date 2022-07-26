@@ -38,7 +38,7 @@
                 <span class="input-group-text">Entity</span>
               </div>
               <!-- <input type="text" class="form-control" placeholder="Entity" required /> -->
-              <select [(ngModel)]="entity" name="entity" title="entity" class="form-select">
+              <select [(ngModel)]="entityId" name="entity" title="entity" class="form-select">
                 <option id="placeholder" value="0" disabled selected>Select your entity</option>
                 <option *ngFor="let entity of entityList" [value]="entity.id">{{entity.entityName}}</option>
               </select>
@@ -48,35 +48,43 @@
               <div class="input-group-append">
                 <span class="input-group-text">Cust Name</span>
               </div>
-              <input type="text" class="form-control" placeholder="Customer Name" required />
+              <input [(ngModel)]="customerId" name="customer Id" type="number" class="form-control" placeholder="Customer Name" required />
             </div>
 
             <div class="input-group">
               <div class="input-group-append">
                 <span class="input-group-text">Trade Date</span>
               </div>
-              <input type="date" class="form-control" placeholder="Trade Date" required />
+              <input [(ngModel)]="tradeDate" name="Trade Date" type="date" class="form-control" placeholder="Trade Date" required />
             </div>
 
             <div class="input-group">
               <div class="input-group-append">
                 <span class="input-group-text">CCY Pair</span>
               </div>
-              <input type="text" class="form-control" placeholder="CCY Pair" required />
+              <input [(ngModel)]="curencyPairId" name="Currency Pair" type="number" class="form-control" placeholder="CCY Pair" required />
             </div>
 
             <div class="input-group">
               <div class="input-group-append">
                 <span class="input-group-text">Bank Buy</span>
               </div>
-              <input type="text" class="form-control" placeholder="Bank Buy" required />
+              <select [(ngModel)]="baseCurrencyId" name="Base Currency" title="Base Currency" class="form-select">
+                <option id="placeholder" value="0" disabled selected>Select your Base Currency</option>
+                <option *ngFor="let currency of currencyList" [value]="currency.id">{{currency.isoCode}}</option>
+              </select>
+              <!-- <input type="text" class="form-control" placeholder="Bank Buy" required /> -->
             </div>
 
             <div class="input-group">
               <div class="input-group-append">
                 <span class="input-group-text">Bank Sell</span>
               </div>
-              <input type="text" class="form-control" placeholder="Bank Sell" required />
+              <select [(ngModel)]="quoteCurrencyId" name="quote Currency" title="quote Currency" class="form-select">
+                <option id="placeholder" value="0" disabled selected>Select your Quote Currency</option>
+                <option *ngFor="let currency of currencyList" [value]="currency.id">{{currency.isoCode}}</option>
+              </select>
+              <!-- <input type="text" class="form-control" placeholder="Bank Sell" required /> -->
             </div>
             <!-- <div class="input-group">
               <span class="spot-rate">Spot Rate</span>
@@ -91,7 +99,7 @@
               </div>
               <div class="col-md-6">
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Cover" required />
+                  <input [(ngModel)]="bankSpotRate" name="Spot Rate Cover" type="number" class="form-control" placeholder="Cover" required />
                 </div>
               </div>
             </div>
@@ -104,7 +112,7 @@
               </div>
               <div class="col-md-6">
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Cover" required />
+                  <input [(ngModel)]="bankSwapPoints" name="swap point cover" type="number" class="form-control" placeholder="Cover" required />
                 </div>
               </div>
             </div>
@@ -117,7 +125,7 @@
               </div>
               <div class="col-md-6">
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Cover" required />
+                  <input [(ngModel)]="bankOutright" name="Outright cover" type="number" class="form-control" placeholder="Cover" required />
                 </div>
               </div>
             </div>
@@ -135,14 +143,14 @@
               <div class="input-group-append">
                 <span class="input-group-text">RM Name</span>
               </div>
-              <input type="text" class="form-control" placeholder="RM Name" required />
+              <input [(ngModel)]="userId" name="RM Id" type="number" class="form-control" placeholder="RM Name" required />
             </div>
 
             <div class="input-group">
               <div class="input-group-append">
                 <span class="input-group-text">Cust Segment</span>
               </div>
-              <select [(ngModel)]="customerSegment" name="customerSegment" title="customer Segment" class="form-select">
+              <select [(ngModel)]="customerSegmentId" name="customerSegment" title="customer Segment" class="form-select">
                 <option id="placeholder" value="0" disabled selected>Select Customer Segment</option>
                 <option *ngFor="let customerSegment of customerSegmentType" [value]="customerSegment.id">{{customerSegment.segmentName}}</option>
               </select>
@@ -160,7 +168,7 @@
               <div class="input-group-append">
                 <span class="input-group-text">Tenor</span>
               </div>
-              <select [(ngModel)]="tenor" name="tenor" title="Tenor" class="form-select">
+              <select [(ngModel)]="tenorUnitId" name="tenor" title="Tenor" class="form-select">
                 <option id="placeholder" value="0" disabled selected>Select Tenor</option>
                 <option *ngFor="let tenor of tenorList" [value]="tenor.id">{{tenor.tenorUnit}}</option>
               </select>
@@ -171,14 +179,14 @@
               <div class="input-group-append">
                 <span class="input-group-text">Buy Amount</span>
               </div>
-              <input type="text" class="form-control" placeholder="Buy Amount" required />
+              <input [(ngModel)]="buyAmount" name="Buy Amount" type="number" class="form-control" placeholder="Buy Amount" required />
             </div>
 
             <div class="input-group">
               <div class="input-group-append">
                 <span class="input-group-text">Sell Amount</span>
               </div>
-              <input type="text" class="form-control" placeholder="Sell Amount" required />
+              <input [(ngModel)]="sellAmount" name="Sell Amount" type="number" class="form-control" placeholder="Sell Amount" required />
             </div>
 
             <hr>
@@ -186,12 +194,12 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Spreads" required />
+                  <input [(ngModel)]="bankSpotSpread" name="spot rate spread" type="number" class="form-control" placeholder="Spreads" required />
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Client " required />
+                  <input [(ngModel)]="clientSpotRate" name="spot rate Client" type="number" class="form-control" placeholder="Client " required />
                 </div>
               </div>
             </div>
@@ -201,12 +209,12 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Spreads" required />
+                  <input [(ngModel)]="bankSwapSpread" name="swap point spread" type="number" class="form-control" placeholder="Spreads" required />
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Client " required />
+                  <input [(ngModel)]="clientSwapRate" name="swap point client" type="number" class="form-control" placeholder="Client " required />
                 </div>
               </div>
             </div>
@@ -216,12 +224,12 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Spreads" required />
+                  <input [(ngModel)]="spreadOutright" name="outright spread" type="number" class="form-control" placeholder="Spreads" required />
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Client " required />
+                  <input [(ngModel)]="clientOutright" name="outright client" type="number" class="form-control" placeholder="Client " required />
                 </div>
               </div>
             </div>
@@ -238,7 +246,7 @@
             <input type="text" class="form-control" placeholder="Remarks " required />
           </div>
         </div>
-        <button type="submit" class="btn buy">Quote</button>
+        <button (click)="requestQuote()" type="submit" class="btn buy">Quote</button>
         <!-- <div class="row">
           <div class="col-md-4 extra">
             <div class="row">

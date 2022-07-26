@@ -3,13 +3,18 @@
   <table class="table">
     <thead>
       <tr>
-        <th>Price(BTC)</th>
-        <th>Amount(ETH)</th>
-        <th>Total(ETH)</th>
+        <th>Instrument</th>
+        <th>CCY(Pair)</th>
+        <th>Spot(Rate)</th>
       </tr>
     </thead>
     <tbody>
-      <tr class="red-bg-80">
+      <tr *ngFor="let negotiation of transaction">
+        <td>{{negotiation.productId}}</td>
+        <td>{{negotiation.baseCurrencyId}}/{{negotiation.quoteCurrencyId}}/td>
+        <td>{{negotiation.spotRate}}</td>
+      </tr>
+      <!-- <tr class="red-bg-80">
         <td class="red">0.022572</td>
         <td>1.253415</td>
         <td>15.27648</td>
@@ -48,8 +53,8 @@
         <td class="red">0.028576</td>
         <td>1.291415</td>
         <td>15.26448</td>
-      </tr>
-    </tbody>
+      </tr> -->
+    <!-- </tbody>
     <tbody class="ob-heading">
       <tr>
         <td>
@@ -66,8 +71,8 @@
         </td>
       </tr>
     </tbody>
-    <tbody>
-      <tr class="green-bg">
+    <tbody> -->
+      <!-- <tr class="green-bg">
         <td class="green">0.158373</td>
         <td>1.209515</td>
         <td>15.23248</td>
@@ -106,7 +111,7 @@
         <td class="green">0.020372</td>
         <td>1.205415</td>
         <td>15.25648</td>
-      </tr>
+      </tr> -->
     </tbody>
   </table>
 </div>

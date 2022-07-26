@@ -11,7 +11,39 @@ export class DataService {
 
   url:String = "http://localhost:3000/";
 
-  fetch_static_data_url:String = "http://localhost:3001/"
+  fetch_static_data_url:String = "http://localhost:3001/";
+
+  quoteRequest:String="http://localhost:8000/";
+
+  socket_url:String="http://localhost:8001/";
+
+
+  getBank(){
+    //Will have an API
+    return 'HDFC';
+  }
+  getBroker(){
+    //Will have an API
+    return 'KANJI';
+  }
+  initiateSocket(_bank:string){
+    //Might get Brokers in this parameter
+    console.log("Starting publishers")
+    //Hit consumerapi
+    switch(_bank){
+      case "HDFC": {
+        console.log("Starting Socket connection HDFC-BROKER")
+        return this.http.get(this.socket_url+"quoterequests/HDFC");
+      }
+      case "KANJI":{
+        console.log("Starting Socket connection for KANJI to get all the requests ")
+        return this.http.get(this.socket_url+"quoterequests/KANJI");
+      }
+      default:{
+        return this.http.get(this.socket_url+"invalidBank");
+      }
+    }
+  }
 
   sendQuote(email:String){
     const header = { 'content-type': 'application/json'} 
@@ -40,6 +72,12 @@ export class DataService {
   register(_json:any){
     const header = { 'content-type': 'application/json'}
     let final_url =this.url + "register"
+    return this.http.post(final_url,_json,{'headers':header})
+  }
+
+  sendQuoteRequest(_json:any){
+    const header = { 'content-type': 'application/json'}
+    let final_url =this.quoteRequest + "sendQuote"
     return this.http.post(final_url,_json,{'headers':header})
   }
   

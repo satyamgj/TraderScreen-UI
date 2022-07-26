@@ -10,6 +10,10 @@ export class HeaderComponent {
 
   constructor(private darkModeService: DarkModeService) {}
 
+  ngOnInit(): void {
+    // this.onToggle()
+  }
+
   onToggle(): void {
     this.darkModeService.toggle();
   }

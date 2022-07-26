@@ -1,3 +1,4 @@
+import { Transaction } from './../../Interfaces/DataInterfaces';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderBookComponent implements OnInit {
 
+  transaction:Transaction[] = []
+
   constructor() { }
 
   ngOnInit(): void {
+    /**
+     * Logic: call Api to get negotiation table
+     *        start socket connection for real-time updates
+    */
   }
 
 }

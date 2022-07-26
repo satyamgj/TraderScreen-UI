@@ -8,7 +8,7 @@ const http = require('http')
 const api_call = require("./api_helper.js")
 
 //API URL TO SEND REQUEST
-const transaction_request = "192.168.1.73:1026/transaction/publishRequest"
+const transaction_request = "http://192.168.1.79:1030/transaction-service/transaction/processQuoteRequest"
 
 //Adding Middlewares
 app.use(express.json());
@@ -21,7 +21,7 @@ app.listen(8000, () => {
 
 app.post('/sendQuote',(req,res)=>{
 	 console.log(req.body);	
-	 api_call.make_API_call('http://localhost:1026/transaction/publishRequest','POST',req)
+	 api_call.make_API_call(transaction_request,'POST',req)
     .then(response => {
         res.json(response)
     })

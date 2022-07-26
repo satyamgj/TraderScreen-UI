@@ -33,7 +33,10 @@ import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 // import { ToastrModule } from 'ngx-toastr';
+
+const config: SocketIoConfig = { url: 'http://localhost:8001', options: {} };
 
 @NgModule({
   declarations: [
@@ -72,7 +75,8 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     HttpClientModule,
     NgbModule,
-    RouterModule
+    RouterModule,
+    SocketIoModule.forRoot(config)
     // ToastrModule.forRoot({
     //   timeOut: 1000,
     // positionClass: 'toast-bottom-center',
