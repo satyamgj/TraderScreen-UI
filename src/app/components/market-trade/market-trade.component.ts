@@ -57,6 +57,10 @@ export class MarketTradeComponent implements OnInit {
   spreadOutright!:number
   clientOutright!:number
 
+  //Setting Buy/Sell flag
+  buyFlag:boolean = true
+  sellFlag:boolean = true
+
   transaction:Transaction = new Transaction();
 
   constructor(private dataService:DataService) { }
@@ -104,4 +108,44 @@ export class MarketTradeComponent implements OnInit {
 
   }
 
+  /**
+   * Below method is to set product ID
+   * Default set to 1
+   **/
+  setProductId(_productId:number){
+    console.log(_productId);
+    if(_productId == 1 ){
+      this.transaction.productId = 1
+    }
+    else if(_productId == 2 ){
+      this.transaction.productId = 2
+    }
+    else if(_productId == 3 ){
+      this.transaction.productId = 3
+    }
+    else{
+      this.transaction.productId = 4
+    }
+  }
+
+  directionActive(){
+ 
+    if(this.buyAmount > 0){
+      this.transaction.buySellDirectionId = 1
+      this.sellFlag = false
+      this.sellAmount = 0
+    }
+    
+    if(this.sellAmount > 0){
+      this.transaction.buySellDirectionId = 2
+      this.buyFlag = false
+      this.buyAmount = 0
+    }
+
+    if(this.buyAmount == null || this.sellAmount == null){
+      this.buyFlag = true
+      this.sellFlag = true
+    }
+
+  }
 }

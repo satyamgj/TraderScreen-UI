@@ -27,10 +27,29 @@
 
 .market-trade .input-group-text {
   background: #eff2f6;
-  color: #4a4a4a;
+  //color: #4a4a4a;
+  color: black;
   font-weight: 300;
   font-size: 14px;
 }
+
+.market-trade .spot-rate {
+  background: #eff2f6;
+  //color: #4a4a4a;
+  color: black;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.market-trade  select{
+  color: black;
+  // border: none;
+  font-size: 14px;
+  // background:#eff2f6;
+  border: 1px solid #e0e3eb;
+}
+
+
 
 .market-trade .input-group {
   margin-bottom: 14px;

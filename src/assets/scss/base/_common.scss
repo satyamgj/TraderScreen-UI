@@ -69,6 +69,7 @@ tbody tr:hover {
 .input-group-text,
 .form-control {
   border-radius: 5px;
+  font-size: 14px;
 }
 .table tbody + tbody {
   border: none;
@@ -125,7 +126,9 @@ tbody tr:hover {
 
 .form-control::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
-  color: #18214d59;
+  //color: #18214d59;
+  color:black;
+  font-size: 14px;
 }
 .form-control::-moz-placeholder {
   /* Firefox 19+ */

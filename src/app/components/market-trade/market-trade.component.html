@@ -4,25 +4,25 @@
   </span>
   <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
-      <button class="nav-link active" id="limit-tab" data-bs-toggle="tab" data-bs-target="#limit" type="button"
+      <button (click)="setProductId(1)" class="nav-link active" id="limit-tab" data-bs-toggle="tab" data-bs-target="#limit" type="button"
         role="tab" aria-controls="limit" aria-selected="true">
         Spot
       </button>
     </li>
     <li class="nav-item" role="presentation">
-      <button class="nav-link" id="market-tab" data-bs-toggle="tab" data-bs-target="#market" type="button" role="tab"
+      <button (click)="setProductId(2)" class="nav-link" id="market-tab" data-bs-toggle="tab" data-bs-target="#market" type="button" role="tab"
         aria-controls="market" aria-selected="false">
         Forward
       </button>
     </li>
     <li class="nav-item" role="presentation">
-      <button class="nav-link" id="stop-limit-tab" data-bs-toggle="tab" data-bs-target="#stop-limit" type="button"
+      <button (click)="setProductId(3)" class="nav-link" id="stop-limit-tab" data-bs-toggle="tab" data-bs-target="#stop-limit" type="button"
         role="tab" aria-controls="stop-limit" aria-selected="false">
         Swap
       </button>
     </li>
     <li class="nav-item" role="presentation">
-      <button class="nav-link" id="stop-market-tab" data-bs-toggle="tab" data-bs-target="#stop-market" type="button"
+      <button (click)="setProductId(4)" class="nav-link" id="stop-market-tab" data-bs-toggle="tab" data-bs-target="#stop-market" type="button"
         role="tab" aria-controls="stop-market" aria-selected="false">
         NDF
       </button>
@@ -179,14 +179,14 @@
               <div class="input-group-append">
                 <span class="input-group-text">Buy Amount</span>
               </div>
-              <input [(ngModel)]="buyAmount" name="Buy Amount" type="number" class="form-control" placeholder="Buy Amount" required />
+              <input (change)="directionActive()" [(ngModel)]="buyAmount" name="Buy Amount" type="number" class="form-control" placeholder="Buy Amount" [disabled]="!buyFlag"/>
             </div>
 
             <div class="input-group">
               <div class="input-group-append">
                 <span class="input-group-text">Sell Amount</span>
               </div>
-              <input [(ngModel)]="sellAmount" name="Sell Amount" type="number" class="form-control" placeholder="Sell Amount" required />
+              <input (change)="directionActive()" [(ngModel)]="sellAmount" name="Sell Amount" type="number" class="form-control" placeholder="Sell Amount" [disabled]="!sellFlag" />
             </div>
 
             <hr>
