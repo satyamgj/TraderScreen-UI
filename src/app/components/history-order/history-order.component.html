@@ -57,11 +57,16 @@
           </thead>
           <tbody>
             <tr>
-              <td>2:40 PM</td>
+              <td contenteditable="true">
+                <!-- <span onkeypress="callBack()" name="editable cell">
+                     {{editableCell}}
+                </span> -->
+                <input class="editable" title="time" type="text"  (ngModelChange)="callBack()" [ngModel]="editableCell"  [name]="editableCell">
+              </td>
               <td>ETH/BTC</td>
               <td class="green">BUY</td>
               <td>$444</td>
-              <td>41</td>
+              <td>41000</td>
               <td>
                 <i class="icon ion-md-checkmark-circle-outline green"></i>
               </td>

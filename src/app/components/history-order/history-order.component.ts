@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistoryOrderComponent implements OnInit {
 
+  editableCell:string = "2:04PM";
+
   constructor() { }
 
   ngOnInit(): void {
@@ -68,5 +70,7 @@ export class HistoryOrderComponent implements OnInit {
     return this.data2.filter(x => x.whoseData === data.name);
   }
  
-
+  callBack(){
+    console.log("Time changed: ")
+  }
 }

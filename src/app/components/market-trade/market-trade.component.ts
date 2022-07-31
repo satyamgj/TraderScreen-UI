@@ -89,15 +89,15 @@ export class MarketTradeComponent implements OnInit {
     this.transaction.quoteCurrencyId = this.quoteCurrencyId
     this.transaction.buyAmount = this.buyAmount
     this.transaction.sellAmount = this.sellAmount
-    this.transaction.spotRate.bankSpotRate = this.bankSpotRate
-    this.transaction.spotRate.bankSpotSpread = this.bankSpotSpread
-    this.transaction.spotRate.clientSpotRate = this.clientSpotRate
-    this.transaction.swapPoint.bankSwapPoints = this.bankSwapPoints
-    this.transaction.swapPoint.bankSwapSpread = this.bankSwapSpread
-    this.transaction.swapPoint.clientSwapRate = this.clientSwapRate
-    this.transaction.outright.bankOutright = this.bankOutright
-    this.transaction.outright.spreadOutright = this.spreadOutright
-    this.transaction.outright.clientOutright = this.clientOutright
+    this.transaction.spotRate.sourceSpotRate = this.bankSpotRate
+    this.transaction.spotRate.sourceSpotSpread = this.bankSpotSpread
+    this.transaction.spotRate.destinationSpotRate = this.clientSpotRate
+    this.transaction.swapPoint.sourceSwapPoints = this.bankSwapPoints
+    this.transaction.swapPoint.sourceSwapSpread = this.bankSwapSpread
+    this.transaction.swapPoint.destinationSwapRate = this.clientSwapRate
+    this.transaction.outright.sourceOutright = this.bankOutright
+    this.transaction.outright.sourceSpreadOutright = this.spreadOutright
+    this.transaction.outright.destinationOutright = this.clientOutright
     this.transaction.userId = 2
 
     console.log(this.transaction)

@@ -62,19 +62,19 @@ export class Transaction{
       }
 
 export class SpotRate{
-        bankSpotRate:number=0
-        bankSpotSpread:number=0
-        clientSpotRate:number=0
+        sourceSpotRate:number=0
+        sourceSpotSpread:number=0
+        destinationSpotRate:number=0
 }
 
 export class SwapPoint{
-        bankSwapPoints:number=0
-        bankSwapSpread:number=0
-        clientSwapRate:number=0
+        sourceSwapPoints:number=0
+        sourceSwapSpread:number=0
+        destinationSwapRate:number=0
 }
 
 export class Outright{
-        bankOutright:number=0
-        spreadOutright:number=0
-        clientOutright:number=0
+        sourceOutright:number=0
+        sourceSpreadOutright:number=0
+        destinationOutright:number=0
 }

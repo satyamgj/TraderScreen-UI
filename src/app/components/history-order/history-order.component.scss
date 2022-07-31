@@ -10,3 +10,21 @@
 tr.main-row{
     // background: #f6f8f9;
 }
+
+.editable{
+    width:40px;
+    height: fit-content;
+    background-color: #131722;
+    color: aliceblue;
+    display: block;
+    border: none;
+    word-wrap: break-word;
+}
+
+.editable:hover{
+    background: #888; 
+}
+
+.table{
+    overflow:scroll;
+}

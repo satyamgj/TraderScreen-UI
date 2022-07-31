@@ -31,6 +31,8 @@
   color: black;
   font-weight: 300;
   font-size: 14px;
+
+  
 }
 
 .market-trade .spot-rate {
@@ -39,6 +41,14 @@
   color: black;
   font-weight: 300;
   font-size: 14px;
+
+  margin: 5px;
+  margin-bottom: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
 }
 
 .market-trade  select{
