@@ -134,6 +134,17 @@
 .dark-mode .market-history .nav-link {
   color: #4f5966;
 }
+
+.dark-mode .market-history .editable{
+  width:40px;
+  height: fit-content;
+  background-color: #131722;
+  color: aliceblue;
+  display: block;
+  border: none;
+  word-wrap: break-word;
+}
+
 .dark-mode .red-bg-80:after,
 .dark-mode .red-bg-60:after,
 .dark-mode .red-bg-40:after,

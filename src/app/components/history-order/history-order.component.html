@@ -26,20 +26,50 @@
     </li> -->
   </ul>
   <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="open-orders" role="tabpanel" aria-labelledby="open-orders-tab">
-      <ul class="d-flex justify-content-between market-order-item">
-        <li>Time</li>
-        <li>All pairs</li>
-        <li>Buy/Sell</li>
-        <li>Price</li>
-        <li>Amount</li>
-        <li>Executed</li>
-        <li>Unexecuted</li>
+    <div class="tab-pane fade" id="open-orders" role="tabpanel" aria-labelledby="open-orders-tab">
+      <!-- <ul class="d-flex justify-content-between market-order-item">
+        <li>RFQID</li>
+        <li>Product</li>
+        <li>CCY pair</li>
+        <li>Notional</li>
+        <li>BUY/SELL</li>
+        <li>Tenor</li>
+        <li>Status</li>
       </ul>
       <span class="no-data">
         <i class="icon ion-md-document"></i>
         No data
-      </span>
+      </span> -->
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>RFQID</th>
+              <th>Product</th>
+              <th>CCY pair</th>
+              <th>Notional</th>
+              <th>BUY/SELL</th>
+              <th>Tenor</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <span *ngIf="(newOrders.length == 0)" class="no-data">
+              <i class="icon ion-md-document"></i>
+              No data
+            </span> 
+            <tr *ngFor="let orders of newOrders">
+              <td>{{orders.rfqId}}</td>
+              <td>{{orders.product}}</td>
+              <td>{{orders.ccyPair}}</td>
+              <td>{{orders.notional}}</td>
+              <td>{{orders.direction}}</td>
+              <td>{{orders.tenor}}</td>
+              <td>{{orders.status}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
     <div class="tab-pane fade" id="closed-orders" role="tabpanel" aria-labelledby="closed-orders-tab">
       <div class="table-responsive">
@@ -114,8 +144,8 @@
                 </td>
                 <td>-</td>
               </tr>
-              <ng-container class="negotiation-container" *ngIf="data.expanded">
-                <tr class="negotiation">
+              <ng-container class="negotiationContainer" *ngIf="data.expanded">
+                <!-- <tr class="negotiation">
                   <th>Time</th>
                   <th>All pairs</th>
                   <th>Buy/Sell</th>
@@ -123,8 +153,8 @@
                   <th>Amount</th>
                   <th>Executed</th>
                   <th>Unexecuted</th>
-                </tr>
-                <tr *ngFor="let details of findDetails(data)">
+                </tr> -->
+                <tr class="negotiation" *ngFor="let details of findDetails(data)">
                   <td>2:40 PM</td>
                   <td>ETH/BTC</td>
                   <td class="green">BUY</td>
@@ -136,35 +166,10 @@
                   <td>No</td>
                 </tr>
               </ng-container>
+              <br>
             </ng-container>
           </tbody>
         </table>
-        <!-- <table class="table">
-          <thead>
-            <tr>
-            <th> Name </th>
-            <th> Place </th>
-            <th> Phone </th>
-            </tr>
-          </thead>
-          <tbody>
-              <ng-container *ngFor="let data of data1">
-                <tr (click)="data.expanded = !data.expanded">
-                  <td> {{ data.expanded ? '&ndash;' : '+'}} {{data.name}} </td>
-                  <td> {{data.place}} </td>
-                  <td> {{data.phone}} </td>
-                </tr>
-              
-                <ng-container *ngIf="data.expanded">
-                  <tr *ngFor="let details of findDetails(data)">
-                    <td style="padding-left: 12px"> {{details.datades.name}} </td>
-                    <td> {{details.datades.hobbies}} </td>
-                    <td> {{details.datades.profession}} </td>
-                  </tr>
-                </ng-container>
-              </ng-container>
-          </tbody>
-        </table> -->
       </div>
     </div>
     <div class="tab-pane fade" id="balance" role="tabpanel" aria-labelledby="balance-tab">
@@ -193,7 +198,7 @@
               </td>
               <td>-</td>
             </tr>
-            <tr>
+            <!-- <tr>
               <td>2:40 PM</td>
               <td>ETH/BTC</td>
               <td class="green">BUY</td>
@@ -247,7 +252,7 @@
                 <i class="icon ion-md-checkmark-circle-outline green"></i>
               </td>
               <td>-</td>
-            </tr>
+            </tr> -->
           </tbody>
         </table>
       </div>

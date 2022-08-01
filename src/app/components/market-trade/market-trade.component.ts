@@ -1,5 +1,6 @@
+import { SharedDataService } from './../../services/shared-data.service';
 import { DataService } from 'src/app/services/data.service';
-import { Entity, CustomerSegment, Tenor, Outright, SpotRate, SwapPoint, Transaction, Currency } from './../../Interfaces/DataInterfaces';
+import { Entity, CustomerSegment, Tenor, Outright, SpotRate, SwapPoint, Transaction, Currency, openOrders } from './../../Interfaces/DataInterfaces';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -15,6 +16,8 @@ export class MarketTradeComponent implements OnInit {
   customerSegmentType:CustomerSegment[]=[]
   tenorList:Tenor[]=[];
   currencyList:Currency[]=[]
+
+  newOrder:openOrders = new openOrders()
 
   //Transaction Parameters
   userId!: number
@@ -63,7 +66,7 @@ export class MarketTradeComponent implements OnInit {
 
   transaction:Transaction = new Transaction();
 
-  constructor(private dataService:DataService) { }
+  constructor(private dataService:DataService,private sharedData:SharedDataService) { }
 
   ngOnInit(): void {
     this.dataService.fetchStaticData().subscribe((data:any)=>{
@@ -96,14 +99,25 @@ export class MarketTradeComponent implements OnInit {
     this.transaction.swapPoint.sourceSwapSpread = this.bankSwapSpread
     this.transaction.swapPoint.destinationSwapRate = this.clientSwapRate
     this.transaction.outright.sourceOutright = this.bankOutright
-    this.transaction.outright.sourceSpreadOutright = this.spreadOutright
+    this.transaction.outright.spreadOutright = this.spreadOutright
     this.transaction.outright.destinationOutright = this.clientOutright
     this.transaction.userId = 2
 
     console.log(this.transaction)
-    
+
     this.dataService.sendQuoteRequest(this.transaction).subscribe((_result)=>{
       console.log(_result)
+      this.newOrder.rfqId = 12345
+      this.newOrder.ccyPair = "USD/JPY"
+      this.newOrder.direction = "BUY"
+      this.newOrder.notional = 100000
+      this.newOrder.status = false
+      this.newOrder.tenor = "3m"
+      this.newOrder.product = "Spot"
+      this.newOrder.orderId = 1
+      this.newOrder.sourceId = this.transaction.sourceId
+      this.sharedData.updateOrder(this.newOrder);
+      this.newOrder = new openOrders()
     })
 
   }

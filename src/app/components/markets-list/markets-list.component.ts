@@ -25,6 +25,7 @@ export class MarketsListComponent implements OnInit {
     //console.log("Listening to: "+ "KANJI_" + this.bankName);
       this._topicName = "KANJI_"+"REQUESTS";
       this.fetchOrderRequests(this._topicName).subscribe((msg:any)=>{
+         this.orders = msg;
          console.log(this._topicName + "->" + msg);
      })
   }

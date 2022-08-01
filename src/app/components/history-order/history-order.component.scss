@@ -1,25 +1,17 @@
 .negotiation{    
     //  margin-bottom: 15px;
-    margin-left: 10px;
+    //  margin-left: 10px;
+    background: #2a2e39;
 }
 
-.negotiation-container{
-    margin-bottom: 100px;
+.negotiationContainer{
+    margin: 5px;
 }
 
 tr.main-row{
     // background: #f6f8f9;
 }
 
-.editable{
-    width:40px;
-    height: fit-content;
-    background-color: #131722;
-    color: aliceblue;
-    display: block;
-    border: none;
-    word-wrap: break-word;
-}
 
 .editable:hover{
     background: #888; 

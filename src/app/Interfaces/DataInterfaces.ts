@@ -51,8 +51,8 @@ export class Transaction{
     outright: Outright = new Outright()
     tenorValue: number = 0
     tenorUnitId: number = 0
-    sourceBankId: number = 1 // will be  modified
-    destinationBankId: number = 3 // will be modified 
+    sourceId: number = 1 // will be  modified
+    destinationId: number = 4 // will be modified 
     uiRequestTimeStamp:String= "2022-07-20T16:29:02.071Z"
     spread: number = 0
     entityId: number = 0
@@ -75,6 +75,18 @@ export class SwapPoint{
 
 export class Outright{
         sourceOutright:number=0
-        sourceSpreadOutright:number=0
+        spreadOutright:number=0
         destinationOutright:number=0
+}
+
+export class openOrders{
+    orderId:number = 0
+    rfqId!:number
+    product!:string
+    ccyPair!:string
+    notional!:number
+    direction!:string
+    tenor!:string
+    status!:boolean
+    sourceId!:number
 }
