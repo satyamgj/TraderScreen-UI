@@ -1,3 +1,4 @@
+import { DataService } from './../../services/data.service';
 import { Transaction, openOrders } from './../../Interfaces/DataInterfaces';
 import { SharedDataService } from './../../services/shared-data.service';
 import { Component, OnInit } from '@angular/core';
@@ -10,20 +11,18 @@ import { Component, OnInit } from '@angular/core';
 export class HistoryOrderComponent implements OnInit {
 
   editableCell:string = "2:04PM";
-  newOrders:openOrders[]=[]
+  newOrders:any[]=[]
 
-  constructor(private sharedData:SharedDataService) { }
+  constructor(private dataService:DataService,private sharedData:SharedDataService) { }
 
   ngOnInit(): void {
-    this.newOrders.splice(0,1)
-    this.sharedData.currentOrder.subscribe((data:openOrders)=>{
-      // if(this.newOrders[0].orderId == 0){
-      //   this.newOrders.splice(0,1);
-      // }
-      
-      if(data.sourceId == 1){
-        this.newOrders.push(data);
+
+    this.sharedData.currentOrder.subscribe((data:any[])=>{
+      // console.log(data)
+      if(data.length > 1){
+        // console.log(data[0].baseCurrency.isoCode) 
       }
+      this.newOrders = data
     })
   }
 

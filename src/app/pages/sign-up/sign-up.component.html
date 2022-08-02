@@ -49,6 +49,9 @@
   <div class="QRCode"></div> 
   <div class="modal-header">
    <h4 class="modal-title">QR Code</h4>
+   <button type="button" class="close" aria-label="Close" (click)="closeEditActionModal(modal)">
+    <span aria-hidden="true">&times;</span>
+  </button>
   </div>
   <div class="modal-body">
    <img title="QR Code" [src]="QRCode" class="center"/>

@@ -1,4 +1,4 @@
-import { openOrders } from './../Interfaces/DataInterfaces';
+import { openOrders, Transaction } from './../Interfaces/DataInterfaces';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
@@ -7,12 +7,12 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class SharedDataService {
 
-  private placedOrders = new BehaviorSubject<openOrders>(new openOrders());
+  private placedOrders = new BehaviorSubject<any>([]);
   currentOrder =  this.placedOrders.asObservable();
 
   constructor() { }
 
-  updateOrder(_json:openOrders){
+  updateOrder(_json:any){
     this.placedOrders.next(_json);
   }
 }

@@ -59,13 +59,13 @@
               No data
             </span> 
             <tr *ngFor="let orders of newOrders">
-              <td>{{orders.rfqId}}</td>
-              <td>{{orders.product}}</td>
-              <td>{{orders.ccyPair}}</td>
-              <td>{{orders.notional}}</td>
-              <td>{{orders.direction}}</td>
-              <td>{{orders.tenor}}</td>
-              <td>{{orders.status}}</td>
+              <td>{{orders.id}}</td>
+              <td>{{orders.product.name}}</td>
+              <td>{{orders.quoteCurrency.isoCode}}/{{orders.baseCurrency.isoCode}}</td>
+              <td>{{orders.buyAmount}}</td>
+              <td class="green">{{orders.buySellDirection.name}}</td>
+              <td>{{orders.tenorUnit.tenorUnit}}</td>
+              <td>Open</td>
             </tr>
           </tbody>
         </table>

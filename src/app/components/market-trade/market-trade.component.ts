@@ -80,44 +80,71 @@ export class MarketTradeComponent implements OnInit {
 
   requestQuote(){
     //setting transaction
-    this.transaction.entityId = this.entityId
-    this.transaction.customerId = this.customerId
-    this.transaction.userId = this.userId
-    this.transaction.customerSegmentId = this.customerSegmentId
-    this.transaction.tradeDate = this.tradeDate
-    this.transaction.valueDate = this.valueDate
-    this.transaction.curencyPairId = this.curencyPairId
-    this.transaction.tenorUnitId = this.tenorUnitId
-    this.transaction.baseCurrencyId = this.baseCurrencyId
-    this.transaction.quoteCurrencyId = this.quoteCurrencyId
-    this.transaction.buyAmount = this.buyAmount
-    this.transaction.sellAmount = this.sellAmount
-    this.transaction.spotRate.sourceSpotRate = this.bankSpotRate
-    this.transaction.spotRate.sourceSpotSpread = this.bankSpotSpread
-    this.transaction.spotRate.destinationSpotRate = this.clientSpotRate
-    this.transaction.swapPoint.sourceSwapPoints = this.bankSwapPoints
-    this.transaction.swapPoint.sourceSwapSpread = this.bankSwapSpread
-    this.transaction.swapPoint.destinationSwapRate = this.clientSwapRate
-    this.transaction.outright.sourceOutright = this.bankOutright
-    this.transaction.outright.spreadOutright = this.spreadOutright
-    this.transaction.outright.destinationOutright = this.clientOutright
+    // this.transaction.entityId = this.entityId
+    // this.transaction.customerId = this.customerId
+    // this.transaction.userId = this.userId
+    // this.transaction.customerSegmentId = this.customerSegmentId
+    // this.transaction.tradeDate = this.tradeDate
+    // this.transaction.valueDate = this.valueDate
+    // this.transaction.curencyPairId = this.curencyPairId
+    // this.transaction.tenorUnitId = this.tenorUnitId
+    // this.transaction.baseCurrencyId = this.baseCurrencyId
+    // this.transaction.quoteCurrencyId = this.quoteCurrencyId
+    // this.transaction.buyAmount = this.buyAmount
+    // this.transaction.sellAmount = this.sellAmount
+    // this.transaction.spotRate.sourceSpotRate = this.bankSpotRate
+    // this.transaction.spotRate.sourceSpotSpread = this.bankSpotSpread
+    // this.transaction.spotRate.destinationSpotRate = this.clientSpotRate
+    // this.transaction.swapPoint.sourceSwapPoints = this.bankSwapPoints
+    // this.transaction.swapPoint.sourceSwapSpread = this.bankSwapSpread
+    // this.transaction.swapPoint.destinationSwapRate = this.clientSwapRate
+    // this.transaction.outright.sourceOutright = this.bankOutright
+    // this.transaction.outright.spreadOutright = this.spreadOutright
+    // this.transaction.outright.destinationOutright = this.clientOutright
+    // this.transaction.userId = 2
+
+    this.transaction.entityId = 1
+    this.transaction.customerId = 1
+    this.transaction.userId = 2
+    this.transaction.customerSegmentId = 1
+    this.transaction.tradeDate = "2022-08-02"
+    this.transaction.valueDate = "2022-08-02"
+    this.transaction.curencyPairId = 1
+    this.transaction.tenorUnitId = 1
+    this.transaction.baseCurrencyId = 148
+    this.transaction.quoteCurrencyId = 72
+    this.transaction.buyAmount = 500000
+    this.transaction.sellAmount = 0
+    this.transaction.spotRate.sourceSpotRate = 0
+    this.transaction.spotRate.sourceSpotSpread =0
+    this.transaction.spotRate.destinationSpotRate = 0
+    this.transaction.swapPoint.sourceSwapPoints = 0
+    this.transaction.swapPoint.sourceSwapSpread = 0
+    this.transaction.swapPoint.destinationSwapRate = 0
+    this.transaction.outright.sourceOutright = 0
+    this.transaction.outright.spreadOutright = 0
+    this.transaction.outright.destinationOutright = 0
     this.transaction.userId = 2
 
     console.log(this.transaction)
 
-    this.dataService.sendQuoteRequest(this.transaction).subscribe((_result)=>{
-      console.log(_result)
-      this.newOrder.rfqId = 12345
-      this.newOrder.ccyPair = "USD/JPY"
-      this.newOrder.direction = "BUY"
-      this.newOrder.notional = 100000
-      this.newOrder.status = false
-      this.newOrder.tenor = "3m"
-      this.newOrder.product = "Spot"
-      this.newOrder.orderId = 1
-      this.newOrder.sourceId = this.transaction.sourceId
-      this.sharedData.updateOrder(this.newOrder);
-      this.newOrder = new openOrders()
+    this.dataService.sendQuoteRequest(this.transaction).subscribe((_result:any)=>{
+      //console.log(_result)
+      // this.newOrder.rfqId = 12345
+      // this.newOrder.ccyPair = "USD/JPY"
+      // this.newOrder.direction = "BUY"
+      // this.newOrder.notional = 100000
+      // this.newOrder.status = false
+      // this.newOrder.tenor = "3m"
+      // this.newOrder.product = "Spot"
+      // this.newOrder.orderId = 1
+      // this.newOrder.sourceId = this.transaction.sourceId
+      //Will be enhanced at phase 2.
+      if(_result){
+        console.log("Request sent successfully")
+        this.sharedData.updateOrder(_result);
+        this.newOrder = new openOrders()
+      }
     })
 
   }

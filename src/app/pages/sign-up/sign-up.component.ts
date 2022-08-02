@@ -76,4 +76,7 @@ export class SignUpComponent implements OnInit {
     })
   }
 
+  closeEditActionModal(_modal:any){
+    _modal.close('Close click')
+  }
 }

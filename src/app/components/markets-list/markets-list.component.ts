@@ -1,6 +1,7 @@
 import { DataService } from 'src/app/services/data.service';
 import { Component, OnInit } from '@angular/core';
 import { Socket } from 'ngx-socket-io';
+import { Transaction } from 'src/app/Interfaces/DataInterfaces';
 
 @Component({
   selector: 'app-markets-list',
@@ -25,8 +26,11 @@ export class MarketsListComponent implements OnInit {
     //console.log("Listening to: "+ "KANJI_" + this.bankName);
       this._topicName = "KANJI_"+"REQUESTS";
       this.fetchOrderRequests(this._topicName).subscribe((msg:any)=>{
-         this.orders = msg;
-         console.log(this._topicName + "->" + msg);
+        this.orders = JSON.parse(msg).payload;
+        if(this.orders.length > 1){
+         // console.log(this.orders[0].spreadOutright)
+        }
+         console.log(this.orders);
      })
   }
 

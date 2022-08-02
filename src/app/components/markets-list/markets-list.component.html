@@ -51,9 +51,17 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr *ngFor="let order of orders">
-
-                    </tr>
+                    <!-- <tr *ngFor="let order of orders">
+                      <td>{{order.product.name}}</td>
+                      <td>{{order.quoteCurrency.isoCode}}/{{order.baseCurrency.isoCode}}</td>
+                      <td>0</td>
+                      <td>{{order.outright.spreadOutright}}</td>
+                      <td class="green">{{order.buySellDirection.name}}</td>
+                      <td>{{order.buyAmount}}</td>
+                      <td>
+                        <button>forward</button>
+                      </td>
+                    </tr> -->
                     <!-- <tr>
                       <td><i class="icon ion-md-star"></i> ETH/BTC</td>
                       <td><img src="../../../assets/img/icon/1.png" alt="eth" /> ETH</td>
@@ -163,6 +171,17 @@
                     </tr>
                   </thead>
                   <tbody>
+                    <tr *ngFor="let order of orders">
+                      <td>{{order.product.name}}</td>
+                      <td>{{order.quoteCurrency.isoCode}}/{{order.baseCurrency.isoCode}}</td>
+                      <td>0</td>
+                      <td>{{order.spreadOutright}}</td>
+                      <td class="green">{{order.buySellDirection.name}}</td>
+                      <td>{{order.buyAmount}}</td>
+                      <td>
+                        <button>forward</button>
+                      </td>
+                    </tr>
                     <!-- <tr>
                       <td><i class="icon ion-md-star"></i> ETH/BTC</td>
                       <td><img src="../../../assets/img/icon/1.png" alt="eth" /> ETH</td>
